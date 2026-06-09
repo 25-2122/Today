@@ -1,44 +1,233 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>User Registration</title>
-    <style>
-        body { font-family: Arial, sans-serif; }
-        form { margin-bottom: 20px; }
-        .success { color: green; font-weight: bold; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Instagram Login Clone</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#fafafa;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+}
+
+.container{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:50px;
+}
+
+.phone{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.phone img{
+    width:380px;
+}
+
+.right-side{
+    width:350px;
+}
+
+.login-box{
+    background:#fff;
+    border:1px solid #dbdbdb;
+    padding:40px;
+    text-align:center;
+}
+
+.logo{
+    font-size:42px;
+    font-family:cursive;
+    margin-bottom:30px;
+}
+
+input{
+    width:100%;
+    padding:10px;
+    margin-bottom:8px;
+    border:1px solid #dbdbdb;
+    background:#fafafa;
+    border-radius:3px;
+    outline:none;
+}
+
+button{
+    width:100%;
+    padding:10px;
+    background:#0095f6;
+    color:white;
+    border:none;
+    border-radius:8px;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:10px;
+}
+
+button:hover{
+    background:#1877f2;
+}
+
+.divider{
+    display:flex;
+    align-items:center;
+    margin:20px 0;
+}
+
+.line{
+    flex:1;
+    height:1px;
+    background:#dbdbdb;
+}
+
+.or{
+    margin:0 15px;
+    color:#8e8e8e;
+    font-size:13px;
+    font-weight:bold;
+}
+
+.facebook-login{
+    color:#385185;
+    font-weight:bold;
+    text-decoration:none;
+    display:block;
+    margin-bottom:20px;
+}
+
+.forgot{
+    font-size:12px;
+    color:#00376b;
+    text-decoration:none;
+}
+
+.signup-box{
+    background:white;
+    border:1px solid #dbdbdb;
+    text-align:center;
+    padding:20px;
+    margin-top:10px;
+}
+
+.signup-box a{
+    text-decoration:none;
+    color:#0095f6;
+    font-weight:bold;
+}
+
+.get-app{
+    text-align:center;
+    margin-top:20px;
+}
+
+.store-buttons{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    margin-top:15px;
+}
+
+.store-buttons img{
+    width:130px;
+}
+
+footer{
+    position:absolute;
+    bottom:20px;
+    text-align:center;
+    width:100%;
+    color:#8e8e8e;
+    font-size:12px;
+}
+
+@media(max-width:875px){
+    .phone{
+        display:none;
+    }
+
+    .container{
+        gap:0;
+    }
+}
+</style>
+
 </head>
 <body>
-    <h2>User Registration</h2>
-    <form id="registerForm">
-        <label for="fname">First Name:</label><br>
-        <input type="text" id="fname" name="fname" required><br><br>
 
-        <label for="sname">Second Name:</label><br>
-        <input type="text" id="sname" name="sname" required><br><br>
+<div class="container">
 
-        <label for="email">Email:</label><br>
-        <input type="email" id="email" name="email" required><br><br>
+    <div class="phone">
+        <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=500"
+             alt="Phone Mockup">
+    </div>
 
-        <label for="password">Password:</label><br>
-        <input type="password" id="password" name="password" required><br><br>
+    <div class="right-side">
 
-        <input type="submit" value="Register">
-    </form>
+        <div class="login-box">
 
-    <div id="message"></div>
+            <div class="logo">Instagram</div>
 
-    <script>
-        document.getElementById("registerForm").addEventListener("submit", function(event) {
-            event.preventDefault(); // stop page reload
+            <form>
+                <input type="text" placeholder="Phone number, username, or email" required>
 
-            const fname = document.getElementById("fname").value;
-            const sname = document.getElementById("sname").value;
+                <input type="password" placeholder="Password" required>
 
-            document.getElementById("message").innerHTML =
-                "<p class='success'>Form submitted successfully!</p>" +
-                "<p>Thank you, " + fname + " " + sname + ". Your registration has been received.</p>";
-        });
-    </script>
+                <button type="submit">Log In</button>
+            </form>
+
+            <div class="divider">
+                <div class="line"></div>
+                <div class="or">OR</div>
+                <div class="line"></div>
+            </div>
+
+            <a href="#" class="facebook-login">
+                Log in with Facebook
+            </a>
+
+            <a href="#" class="forgot">
+                Forgot password?
+            </a>
+
+        </div>
+
+        <div class="signup-box">
+            Don't have an account?
+            <a href="#">Sign up</a>
+        </div>
+
+        <div class="get-app">
+            <p>Get the app.</p>
+
+            <div class="store-buttons">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+                     alt="Google Play">
+
+                <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+                     alt="App Store">
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<footer>
+    © 2026 Instagram Clone Project - For Educational Purposes Only
+</footer>
+
 </body>
 </html>
